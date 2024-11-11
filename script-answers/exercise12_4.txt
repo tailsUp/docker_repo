@@ -1,0 +1,5 @@
+sorsa@Nikke-MacBook-Pro ~ % docker start -i dreamy_haibt
+root@2927ea375244:/# ls
+bin  boot  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@2927ea375244:/# node /usr/src/app/index.js
+Hello World
