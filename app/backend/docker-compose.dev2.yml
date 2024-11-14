@@ -14,9 +14,6 @@ services:
     image: redis
     ports:
       - 6379:6379
-    volumes:
-      - ./redis_data:/data
 
-volumes:
+volumes:        #NAMED VOLUME --> pitäisi tehdä runtime aikana volume jonnekin projektiin ja pitöö tavara tallessa siellä...
   mongo_data:
-  redis_data:

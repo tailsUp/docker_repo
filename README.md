@@ -13,18 +13,21 @@ tämän jälkeen localhost 3000(/todos/nro/jne)
 12.1.2  - OK. Kloonattu.
 12.1.3  - OK. Curl tehty.
 12.2.1  - OK. docker run -it ubuntu bash
-12.2.2  - OK
-12.2.3  - Ok
-12.2.4  - OK
+12.2.2  - OK.
+12.2.3  - Ok.
+12.2.4  - OK.
 12.3    - OK. Lisätty rivi.
 12.4    - OK. 
 12.5.1  - OK. image luotu nimellä image-backend. Image käynnistetty komennolla: docker run -p 3123:3000 image-backend. Container nimi: mystifying_leavitt.
-
 12.6    - OK. Buildattu: docker compose up --build. Käynnistyy localhostiin.
-
 12.7    - OK. Käytetty mongon omia operaatioita etsintään ja päivittämiseen. Ei tehty mitään erikoisia try/catch nappauksia. Testattu localhost ja postman.
-
 12.8    - OK. Saatu päivitettyä CLI:stä. Muutokset nähty sekä CLI:ssä että localhostissa.
+12.9	- OK. docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest. Tämän jälkeen yml asetukset. Saatu localhost auki redis_osoitteella. Ei virheitä consolissa.
+12.10	- OK. Voi noutaa 'added_todos' ja voi luoda uuden. Testattu localhost ja postman.
+12.11	- OK.
+12.12   - OK.
+
+12.13   -
 
 *** Muuta ***
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const { Todo } = require('../mongo')
 const router = express.Router();
+const { setAsync, getAsync } = require('../redis/index');
 
 /* GET todos listing. */
 router.get('/', async (_, res) => {
@@ -8,12 +9,25 @@ router.get('/', async (_, res) => {
   res.send(todos);
 });
 
-/* POST todo to listing. */
+/* CREATE TODO and UPDATE COUNTER*/
 router.post('/', async (req, res) => {
+  console.log('TÄÄLLÄ!!!')
   const todo = await Todo.create({
     text: req.body.text,
     done: false
   })
+  let counter = await getAsync('added_todos').then(count => { 
+    return JSON.parse(count)
+  })
+  if(counter === null) 
+  {
+    counter = 1
+  }
+  else 
+  {
+    counter++
+  }
+  setAsync('added_todos', counter);
   res.send(todo);
 });
 
@@ -40,10 +54,10 @@ singleRouter.get('/', async (req, res) => {
   res.send(todo)
 });
 
-/* PUT todo. */
+/* UPDATE SINGLE. */
 singleRouter.put('/', async (req, res) => {
   console.log('Update todo with ID')
-  try {
+  /*try {
     Todo.replaceOne({ _id: req.todo.id }, 
       { text: req.body.text, done: req.body.done }) 
        .then(result => { 
@@ -51,10 +65,18 @@ singleRouter.put('/', async (req, res) => {
           res.send(204) //Resource updated succesfully
       })
   } catch(error) {
-    res.send(400)
-  }
-
+    res.send(405)
+  }*/
   //res.sendStatus(405); // Implement this
+
+  const ID = req.todo.id
+  const todo = {
+    text: req.body.text,
+    done: req.body.done
+  }
+  //True arvon pitäisi palauttaa päivitetty olio.
+  const updated = await Todo.findByIdAndUpdate(ID, todo, { new: true });
+  res.send(updated)
 });
 
 router.use('/:id', findByIdMiddleware, singleRouter)
