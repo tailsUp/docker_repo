@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const todosRouter = require('./routes/todos');
-const x = require('./redis/index');
 
 const app = express();
 

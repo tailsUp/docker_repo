@@ -1,4 +1,6 @@
-import React from 'react'
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
+import Todo from './Todo'
 
 const TodoList = ({ todos, deleteTodo, completeTodo }) => {
   const onClickDelete = (todo) => () => {
@@ -33,11 +35,18 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
           </>
         )
 
-        return (
+        /*return (
           <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '70%', margin: 'auto' }}>
             <span>
               {todo.text} 
             </span>
+            {todo.done ? doneInfo : notDoneInfo}
+          </div>
+        )*/
+
+        return (
+          <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '70%', margin: 'auto' }}>
+            <Todo todo={todo} />
             {todo.done ? doneInfo : notDoneInfo}
           </div>
         )

@@ -7,7 +7,7 @@ COPY --chown=node:node . .
 RUN npm ci 
 
 ENV DEBUG=backend:*
-  
+
 USER node
 
 CMD npm start
