@@ -17,16 +17,3 @@ The application has /todos crud which requires a MongoDB. Pass connection url wi
 # Redis
 
 Pass connection url with env `REDIS_URL`
-
-# Miten BACKEND ajetaan käyntiin?
-
-1. Tarvitset kaksi terminaalia:
-    --> docker compose -f docker-compose.dev.yml up
-    --> npm run dev
-    TAI
-
-# Miten BACKEND ajetaan development containerissa
-
-1. Tarvitse kaksi terminaalia:
-    --> docker compose -f docker-compose.dev.yml up
-    --> 
