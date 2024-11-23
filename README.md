@@ -1,12 +1,5 @@
 * Pidetään täällä kirjaa tehdyistä tehtävistä
 
-*** Miten ajaa projektia ***
-
-backend mongoyhteys käyntiin:   docker compose -f docker-compose.dev.yml up
-backend päälle:                 npm run dev
-
-tämän jälkeen localhost 3000(/todos/nro/jne)
-
 *** Tehtävät: ***
 
 12.1.1  - OK. Luettu.
@@ -26,16 +19,25 @@ tämän jälkeen localhost 3000(/todos/nro/jne)
 12.10	- OK. Voi noutaa 'added_todos' ja voi luoda uuden. Testattu localhost ja postman.
 12.11	- OK.
 12.12   - OK.
-
-12.13   -
+12.13   - OK.
+12.14   - OK. Testit läpi (docker build . -t frontend)
+12.15   - OK.
+12.16   - OK. EI MAHDOLLISUUTTA TARKITAA TOIMIIKO KUTEN HALUTTU. EI OHJEITA.
+12.17   - OK.
+12.18   - OK.
+12.19   - OK.
+12.20   - OK.
 
 *** Muuta ***
 
 Poistetu todo nimistä.
 
 Asennettu: npm install dotenv --save
+Asennettu: npm install -D vitest
+Asennettu: npm install --save-dev @testing-library/react @testing-library/dom
 
-*** TUTORIAALIT ***
+
+*** Tutoriaalien komennot ***
 
 Hello-world:latest
 docker container run hello-world
@@ -105,11 +107,3 @@ docker compose -f docker-compose.dev.yml up -d
 docker compose -f docker-compose.dev.yml logs -f
 --> http://localhost:3456
 --> It looks like you are trying to access MongoDB over HTTP on the native driver port.
-
-
-
-
-docker start -i mystifying_leavitt
-docker run -it mystifying_leavitt bash
-
-docker container run -it --name mystifying_leavit node:20 bash

@@ -9,6 +9,3 @@ RUN npm install
 
 # npm run dev is the command to start the application in development mode
 CMD ["npm", "run", "dev", "--", "--host"]
-
-#docker build -f ./dev.Dockerfile -t frontend-dev .
-#docker run -it -v "$(pwd):/usr/src/app/" front-dev bash
